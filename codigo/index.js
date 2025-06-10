@@ -1,28 +1,60 @@
-// Trabalho Interdisciplinar 1 - Aplicações Web
-//
-// Esse módulo implementa uma API RESTful baseada no JSONServer
-// O servidor JSONServer fica hospedado na seguinte URL
-// https://jsonserver.rommelpuc.repl.co/contatos
-//
-// Para montar um servidor para o seu projeto, acesse o projeto 
-// do JSONServer no Replit, faça o FORK do projeto e altere o 
-// arquivo db.json para incluir os dados do seu projeto.
-//
-// URL Projeto JSONServer: https://replit.com/@rommelpuc/JSONServer
-//
-// Autor: Rommel Vieira Carneiro
-// Data: 03/10/2023
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const data_router = require("./public/assets/js/routers/routes.js");
+const user_router = require("./public/assets/js/routers/user-router.js");
 
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('./db/db.json')
-  
-// Para permitir que os dados sejam alterados, altere a linha abaixo
-// colocando o atributo readOnly como false.
-const middlewares = jsonServer.defaults({ noCors: true })
-server.use(middlewares)
-server.use(router)
+const middlewares = jsonServer.defaults({
+  noCors: true,
+  readOnly: false,
+});
+
+
+server.use(middlewares);
+server.use(jsonServer.bodyParser);
+
+server.use((req,res,next) => {
+  if(req.url.startsWith("/tipos-lixo") || req.url.startsWith("/tipos-cidade")) {
+    res.set("Cache-Control", "public, max-age=3600");
+  } 
+  next();
+})
+
+server.use(data_router);
+
+server.use(user_router);
+
+server.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+server.get("/contas/criar", (req, res) => {
+  res.sendFile(__dirname + "/public/modulos/conta/criar.html");
+});
+
+server.get("/contas/entrar", (req, res) => {
+  res.sendFile(__dirname + "/public/modulos/conta/entrar.html");
+});
+
+server.get("/contas/detalhes", (req, res) => {
+  res.sendFile(__dirname + "/public/modulos/conta/detalhes.html");
+});
+
+server.get("/lixos", (req, res) => {
+  res.sendFile(__dirname + "/public/modulos/lixos/detalhes.html");
+});
+
+server.get("/quizzes/page", (req, res) => {
+  res.sendFile(__dirname + "/public/modulos/quiz/quizhub.html");
+});
+
+server.get("/quizzes/questionario", (req, res) => {
+  res.sendFile(__dirname + "/public/modulos/quiz/quizpage.html");
+});
+
+server.use((req, res) => {
+  res.status(404).json({ error: "Rota não encontrada" });
+});
 
 server.listen(3000, () => {
-  console.log(`JSON Server is running em http://localhost:3000`)
-})
+  console.log(`JSON Server is running em http://localhost:3000`);
+});
