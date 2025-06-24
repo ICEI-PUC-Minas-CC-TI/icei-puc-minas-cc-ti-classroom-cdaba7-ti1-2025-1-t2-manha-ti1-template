@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste de Endereço do Pet</title>
+</head>
+<body>
+  <h1>Testar Funcionalidades de Endereço</h1>
+
+  <fieldset>
+    <legend>Registrar Endereço</legend>
+    <label>ID do Pet: <input type="text" id="entityId" value="petTest2" /></label><br />
+    <label>Rua: <input type="text" id="street" value="Rua das Flores" /></label><br />
+    <label>Número: <input type="text" id="number" value="123" /></label><br />
+    <label>Complemento: <input type="text" id="complement" value="Casa" /></label><br />
+    <label>Bairro: <input type="text" id="neighborhood" value="Centro" /></label><br />
+    <label>Cidade: <input type="text" id="city" value="Belo Horizonte" /></label><br />
+    <label>Estado: <input type="text" id="state" value="MG" /></label><br />
+    <label>CEP: <input type="text" id="zipCode" value="30123-456" /></label><br />
+    <label>País: <input type="text" id="country" value="Brasil" /></label><br />
+    <label>ID do Doador: <input type="text" id="donorId" value="donorTestId" /></label><br />
+    <button id="registerAddressButton">Registrar Endereço</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Editar Endereço</legend>
+    <label>ID do Endereço: <input type="text" id="editAddressId" /></label><br />
+    <label>ID do Doador: <input type="text" id="editDonorId" /></label><br />
+    <label>Rua: <input type="text" id="editStreet" value="Avenida Dom José Gaspar"/></label><br />
+    <label>Número: <input type="text" id="editNumber" value="500"/></label><br />
+    <label>Complemento: <input type="text" id="editComplement" /></label><br />
+    <label>Bairro: <input type="text" id="editNeighborhood" value="Coração Eucarístico"/></label><br />
+    <label>Cidade: <input type="text" id="editCity" value="Belo Horizonte"/></label><br />
+    <label>Estado: <input type="text" id="editState" value="MG"/></label><br />
+    <label>CEP: <input type="text" id="editZipCode" value="30535-901"/></label><br />
+    <label>País: <input type="text" id="editCountry" value="Brasil"/></label><br />
+    <button id="editAddressButton">Editar Endereço</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Buscar Endereço por ID</legend>
+    <label>ID do Endereço: <input type="text" id="getAddressId" value="address-1" /></label>
+    <button id="getAddressButton">Buscar</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Buscar Endereço por Pet</legend>
+    <label>ID do Pet: <input type="text" id="getPetId" value="pet-1" /></label>
+    <button id="getByPetButton">Buscar</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Listar Todos Endereços</legend>
+    <button id="fetchAllButton">Buscar Todos</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Excluir Endereço</legend>
+    <label>ID do Endereço: <input type="text" id="deleteAddressId" value="address-1" /></label>
+    <label>ID do Doador: <input type="text" id="deleteDonorId" value="donor-1" /></label>
+    <button id="deleteButton">Excluir</button>
+  </fieldset>
+
+  <h3>Resultado:</h3>
+  <pre id="result"></pre>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

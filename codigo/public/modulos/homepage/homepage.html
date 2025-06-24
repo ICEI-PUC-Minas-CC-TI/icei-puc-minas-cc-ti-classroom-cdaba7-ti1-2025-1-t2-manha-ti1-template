@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>PetMatch Homepage</title>
+  <link rel="stylesheet" href="../../components/header/styles.css"> 
+  <link rel="stylesheet" href="../../components/pet-card/style.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../components/sidebar/styles.css">
+</head>
+<body>
+  <div id="screen-container">
+  <header class="topbar">
+    <h1 class="logo">PETMATCH</h1>
+
+    <div class="search">
+      <input type="text" placeholder="Pesquisa" id="searchBar"/>
+      <button id="searchButton"><i class="material-icons">search</i></button>
+    </div>
+  </header>
+
+    <main>
+       <!-- Seção do Caroussel -->
+    <section class="carousel">
+      <button class="carousel-prev">&#10094;</button>
+      <div class="carousel-slide">
+        <a href="../tips/tips.html" target="_blank">
+          <img src="../../Images/DicasCachorros.png" alt="Dicas Cachorro" />
+        </a>
+      </div>
+      <div class="carousel-slide">
+        <a href="../tips/tips.html" target="_blank">
+          <img src="../../Images/DicasGatos.png" alt="Dicas Gatos" />
+        </a>
+      </div>
+      <div class="carousel-slide">
+        <a href="../tips/tips.html" target="_blank">
+          <img src="../../Images/DicasCoelhos.png" alt="Dicas Coelhos" />
+        </a>
+      </div>
+      <div class="carousel-slide">
+        <a href="../tips/tips.html" target="_blank">
+          <img src="../../Images/DicasPassaros.png" alt="Dicas Pássaros" />
+        </a>
+      </div>
+      <button class="carousel-next">&#10095;</button>
+    </section>
+   
+    <section class="pets-header">
+      <h2>Pets Filtrados</h2>
+      <button class="options">Opções</button>
+    </section>
+      <ul class="pet-card-list" id="cachorro">
+
+         
+ 
+ 
+             
+          
+          
+           
+        
+          
+      </ul>
+
+    </main>
+     <!-- Footer -->
+    <footer>
+        <span>&copy; 2025 PetMatch</span>
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+        </div>
+    </footer>
+    </div>
+    <script type="module" src="../../components/sidebar/sidebar.js"></script>
+
+    <script type="module" src="../../utils/verify-login.js"></script>
+    
+    <script src="../../jquery/jquery.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="scriptcarousel.js"></script>
+  </div>
+</body>
+</html>

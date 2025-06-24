@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>Explore</title>
+  <link rel="stylesheet" href="../../components/header/styles.css">
+  <link rel="stylesheet" href="../../components/pet-card/style.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../components/header/styles.css" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <style>
+        .marker {
+            display: block;
+            border: 2px solid #000;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+        }
+    </style>
+
+    <main id="mainContainer">
+        <aside id="aside">
+            <div id="main-aside">
+                <button id="go-back-button">
+                    <i class="material-icons">arrow_back_ios_new</i>
+                </button>
+
+                <nav id="aside-nav">
+                    <ul>
+                        <li>
+                            <button class="asideButtonSelected mainAsideButton" id="pets">
+                                <i class="material-icons">pets</i>
+    
+                                <p>
+                                    Todos os Pets
+                                </p>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="favorite" class="mainAsideButton">
+                            <i class="material-icons">favorite</i>
+                            <p>
+                                Pets favoritos
+                            </p>
+                        </button>
+                        </li>
+                     
+        
+                    </ul>
+                </nav>
+            </div>
+            <div id="dinamic_aside">
+                <div class="search">
+                    <input type="text" placeholder="Pesquisa" id="searchBar"/>
+                    <button id="searchButton"><i class="material-icons">search</i></button>
+                </div>
+
+                <div id="petListContainer">
+                    <h2>Pets</h2>
+
+                    <ul id="pet-card-list-container" class="petList">
+                 
+                    </ul>
+                </div>
+            </div>
+
+            <button class="toggle-aside" id="toggle-aside-open">
+                <i class="material-icons">arrow_back_ios_new</i>
+            </button>
+        </aside>
+        <div id="address-dialog">
+            <i class="material-icons">pin_drop</i>
+            <p>Local</p>
+        </div>
+        <!-- O mapa -->
+    </main>
+    
+        <div id='map'></div>
+
+        <script type="module" src="../../utils/verify-login.js"></script>
+        <script src="../../jquery/jquery.js"></script>
+        <script type="module" src="./script.js"></script>
+</body>
+</html>
